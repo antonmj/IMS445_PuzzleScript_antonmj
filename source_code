@@ -1,0 +1,195 @@
+title Robots vs Aliens
+author Michael Anton
+homepage www.puzzlescript.net
+
+========
+OBJECTS
+========
+
+Background 
+darkblue  yellow
+11111
+10011
+11111
+11001
+11111
+
+Target 
+BLACK BLUE
+11111
+10001
+10001
+10001
+11111
+
+Wall 
+black darkblue
+00000
+00100
+01110
+00100
+00000
+
+Player 
+lightred red white purple
+00200
+13231
+11111
+01210
+01110
+
+Crate 
+green lightgreen transparent
+20002
+01010
+00000
+00100
+20002
+
+Teleporter
+transparent purple red
+00000
+01110
+01210
+01110
+00000
+
+Changers
+transparent darkblue
+00000
+01110
+01010
+01110
+00000
+
+
+=======
+LEGEND
+=======
+
+. = Background
+# = Wall
+P = Player
+* = Crate
+@ = Crate and Target
+O = Target
+1 = Teleporter
+2 = Changers
+
+=======
+SOUNDS
+=======
+
+================
+COLLISIONLAYERS
+================
+
+Background
+Target
+Teleporter
+Changers
+Player, Wall, Crate
+
+======
+RULES     
+======     
+
+[ >  Player | Crate ] -> [  >  Player | > Crate  ] 
+[ > Player | Teleporter | ... | Teleporter ] -> [ | Teleporter | ... | Player Teleporter ]
+[ > Player | Changers | Background ] -> [ | Wall | Player Background ]
+
+==============
+WINCONDITIONS
+==============
+
+All Target on Crate     
+
+=======     
+LEVELS
+=======
+
+
+message Level 1: Beware of the strange background tile
+
+##########
+#p...2.*o#
+#.########
+#.########
+#*########
+#.########
+#o########
+##########
+
+message Level 2: Horizantal portal
+
+#############
+#p..*..o#o..#
+#..1..####1.#
+###.##...#*.#
+#...##.#.#..#
+#.###..*..###
+#.....#..o###
+#############
+
+message Level 3: Multiple players
+
+###############
+#......#......#
+#p...*.#.#..*.#
+#####..#oo..###
+##.....#p##.*.#
+##..o..#..#...#
+##.#..##..#o#.#
+#.....##.*.##.#
+#.*.o..#......#
+###############
+
+
+message Level 4: Multiple players and portals
+
+##########
+##1.##1.##
+##.*o#.*.#
+###.###o##
+##########
+##1###1###
+##.###.###
+##p###p###
+##.###.###
+##.#######
+##########
+
+message Level 5: Labyrinth
+
+###############
+#p2.2.#.2.##..#
+#2.##.2.##..2.#
+#.2.#2#2#.2.###
+#2.#..#...#.#.#
+#....##.###.2.#
+#.2##..2..2.#.#
+##.#.2#.##.#.##
+#..#..#.....2.#
+#.2...######.*#
+##.#.2..2....o#
+###############
+
+message Level 6: Goodluck
+
+###################
+#p....2..#....o...#
+#.#.2.12.###...1..#
+#2#####..#..##..*.#
+#.#1*o#..#....##..#
+#.#####..#.1.2..###
+#........#....*..o#
+###################
+#o#####..#p2..#..o#
+#.#1#...##2###...*#
+#.#..*.#o#....#2..#
+#.#o..1#.##1.##.2.#
+#*1####.*#..2.#1.2#
+#........#.#..#...#
+###################
+
+message Congratulations, you won!
